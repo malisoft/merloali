@@ -23,7 +23,7 @@
     justify-content: end;
     align-items: center;
     min-height: 200px;
-    min-width: 350px;
+    min-width: 300px;
     max-width: 750px;
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 15px;
@@ -123,7 +123,7 @@
     align-items: center;
     min-height: 200px;
     position: relative;
-    min-width: 350px;
+    min-width: 300px;
     max-width: 750px;
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 15px;
