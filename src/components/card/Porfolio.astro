@@ -1,0 +1,29 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: string;
+  url?: string;
+  message?: string;
+  flag?: string;
+}
+
+const props = Astro.props as Props;
+---
+
+<div
+  class="portfolio-card"
+  style={`
+background-image: url('${props.image}');
+background-size: cover;
+`}
+>
+  <div>
+    <h3>{props.title}</h3>
+    {props.flag && <label>({props.flag})</label>}
+    <p>{props.description}</p>
+    {props.url && <a href={props.url} target="_blank">
+      Visit website
+    </a>}
+  </div>
+</div>

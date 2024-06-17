@@ -1,0 +1,109 @@
+---
+import '../styles/global.css'
+import Skill from '../components/card/Skill.astro'
+import Portfolio from '../components/card/Porfolio.astro'
+import Experience from '../components/card/Experience.astro'
+
+import { skills } from '../constants/skills'
+import { tools } from '../constants/tools'
+import { portfolio } from '../constants/portfolio'
+import { experience } from '../constants/experience'
+import ContactMe from '../components/card/ContactMe.astro'
+import Thanks from '../components/card/Thanks.astro'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/merlo.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Rodolfo Merlo Ali</title>
+    <meta name="author" content="Rodolfo Merlo Ali">
+    <meta name="keywords" content="rodolfo, merlo, merloali, rodolfomerloali, rodolfo merlo ali, rodolfo merlo, rodolfo ali, merlo ali, merlo ali, merlo, ali, web, web development, laravel, vuejs, php, javascript, nodejs, react, typescript, astro, css, sass, html, tailwindcss, bootstrap, git, github, gitlab, bitbucket, docker, kubernetes,api gateway">
+    <meta name="description" content="I'am a self-taught developer, with experience in the web and in web application development, as I am passionate about this area, also teaching (although not my strong point), providing support.">
+    <script src="/merlo.js" is:inline></script>
+	</head>
+	<body>
+    <main>
+      <merlo-ali>
+        <h1>I'am Rodolfo Merlo Ali</h1>
+        <p>Laravel, Vue.js developer, and a big fan of the web.</p>
+      </merlo-ali>
+      <article>
+        <h2>About</h2>
+        <p lang="en">
+          I'am a self-taught developer, with experience in the web and in web application development,
+          as I am passionate about this area, also teaching (although not my strong point), providing support.
+        <p/>
+        <p>
+          Currently I'm interested in <strong>entrepreneurship and research in technology</strong>.
+        </p>
+      </article>
+      <article>
+        <h2>My Skills</h2>
+        <section class="skills">
+          {skills.map((skill) => (
+            <Skill {...skill} />
+          ))}
+        </section>
+        <h2>My Tools</h2>
+        <section class="skills">
+          {tools.map((tool) => (
+            <Skill {...tool} />
+          ))}
+        </article>
+        <p class="dotfiles">
+          <a href="https://gitlab.com/malisoftbo/dotfiles" target="_blank">
+            Go to my dotfiles
+          </a>
+        </p>
+      </article>
+      <article>
+        <h2>Portfolio</h2>
+        <section class="portfolio">
+          {portfolio.map((portfolio) => (
+            <Portfolio {...portfolio} />
+          ))}
+        </section>
+      </article>
+      <article>
+        <h2>Experience</h2>
+        <section class="experience">
+          {experience.map((experience) => (
+            <Experience {...experience} />
+          ))}
+        </section>
+      </article>
+      <ContactMe />
+      <footer>
+        <Thanks/>
+      </footer>
+    </main>
+	</body>
+</html>
+
+<style scoped>
+.dotfiles {
+  text-align: center;
+  transition: scale 0.3s linear;
+  &:hover {
+    scale: 1.1;
+  }
+  > a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: 10px;
+    margin: 10px;
+    outline: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+}
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+</style>

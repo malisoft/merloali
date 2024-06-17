@@ -1,0 +1,88 @@
+---
+export interface Props {
+  title: string;
+  as: string;
+  company: string;
+  description: string;
+  year: string;
+}
+
+const { title, as, company, description, year } = Astro.props;
+---
+<div class="experience-card">
+  <label>{year}</label>
+  <div class="divider"/>
+  <div class="content">
+    <h3>{title} <strong>{company}</strong></h3>
+    <h4>{as}</h4>
+    <p>{description}</p>
+  </div>
+</div>
+
+<style scoped>
+.experience-card {
+  display: flex;
+  > label {
+    font-size: 0.8rem;
+    color: var(--warning-color);
+    background-color: var(--secondary-color);
+    height: fit-content;
+    margin-right: 20px;
+    padding: 5px;
+    position: relative;
+    height: 1rem;
+    &:after {
+      position: absolute;
+      top: 0;
+      right: -13px;
+      height: 0;
+      border-top: calc(1rem - 3px) solid transparent;
+      border-bottom: calc(1rem - 3px) solid transparent;
+      border-left: calc(1rem - 3px) solid var(--secondary-color);
+      content: "";
+    }
+  }
+  > .divider {
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: calc(50% - .5rem);
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      content: "";
+      filter: drop-shadow(0 0 10px rgb(241, 191, 109));
+    }
+    &:after {
+      margin-top: calc(1.5rem);
+      position: absolute;
+      top: 0;
+      right: calc(50% - 1px);
+      width: 2px;
+      height: calc(100% - 2rem);
+      background-color: #eee;
+      content: "";
+    }
+  }
+  > .content {
+    flex: 1;
+    > h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      > strong {
+        color: var(--primary-color);
+      }
+    }
+    h4 {
+      font-size: 1rem;
+      color: var(--warning-color);
+    }
+  }
+}
+</style>
