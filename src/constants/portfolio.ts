@@ -17,11 +17,13 @@ export const portfolio = [
     image: '/images/portfolio/diyoco.png',
     message: 'I\'m working on this project, and I\'m excited to see how it turns out.',
     flag: "Rebuilding",
+    url: 'https://diyoco.com',
   },
   {
     title: 'Damitaz.com',
     description: "I'm working on this project, and I'm excited to see how it turns out.",
     image: '/images/portfolio/damitaz.jpg',
     flag: 'Thinking',
+    url: 'https://damitaz.com',
   }
 ];
