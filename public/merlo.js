@@ -23,8 +23,7 @@
     justify-content: end;
     align-items: center;
     min-height: 200px;
-    position: relative;
-    min-width: 400px;
+    min-width: 350px;
     max-width: 750px;
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 15px;
@@ -32,6 +31,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
+    position: relative;
   }
 
   .hero[data-v-0564b52a] img {
@@ -123,7 +123,7 @@
     align-items: center;
     min-height: 200px;
     position: relative;
-    min-width: 400px;
+    min-width: 350px;
     max-width: 750px;
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 15px;
