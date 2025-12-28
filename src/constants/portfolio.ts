@@ -7,23 +7,16 @@ export const portfolio = [
   },
   {
     title: 'Malisoft.dev',
-    description: "A small startup where I worked on private projects for clients in workana.",
+    description: "Custom software development for international clients, delivering tailored web solutions using modern JavaScript frameworks.",
     image: '/images/portfolio/malisoft.png',
     url: 'https://malisoft.dev',
   },
   {
     title: 'Diyoco.com',
-    description: "An E-commerce website that sells a variety of products, including dropshipping, online stores, and more.",
+    description: "Full-scale E-commerce platform implementation featuring dynamic product management and secure payment processing.",
     image: '/images/portfolio/diyoco.png',
-    message: 'I\'m working on this project, and I\'m excited to see how it turns out.',
+    message: 'Architecture refactoring in progress using serverless technologies.',
     flag: "Rebuilding",
     url: 'https://diyoco.com',
   },
-  {
-    title: 'Damitaz.com',
-    description: "I'm working on this project, and I'm excited to see how it turns out.",
-    image: '/images/portfolio/damitaz.jpg',
-    flag: 'Thinking',
-    url: 'https://damitaz.com',
-  }
 ];

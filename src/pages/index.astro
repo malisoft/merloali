@@ -1,58 +1,113 @@
 ---
-import '../styles/global.css'
-import Skill from '../components/card/Skill.astro'
-import Portfolio from '../components/card/Porfolio.astro'
-import Experience from '../components/card/Experience.astro'
+import "../styles/global.css";
+import Skill from "../components/card/Skill.astro";
+import Portfolio from "../components/card/Porfolio.astro";
+import Experience from "../components/card/Experience.astro";
 
-import { skills } from '../constants/skills'
-import { tools } from '../constants/tools'
-import { portfolio } from '../constants/portfolio'
-import { experience } from '../constants/experience'
-import ContactMe from '../components/card/ContactMe.astro'
-import Thanks from '../components/card/Thanks.astro'
+import { skills } from "../constants/skills";
+import { tools } from "../constants/tools";
+import { portfolio } from "../constants/portfolio";
+import { experience } from "../constants/experience";
+import ContactMe from "../components/card/ContactMe.astro";
+import Thanks from "../components/card/Thanks.astro";
+import Github from "../components/icons/github.astro";
+import Gitlab from "../components/icons/gitlab.astro";
+import Linkedin from "../components/icons/linkedin.astro";
+import Email from "../components/icons/email.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/assets/merlo.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Rodolfo Merlo Ali</title>
-    <meta name="author" content="Rodolfo Merlo Ali">
-    <meta name="keywords" content="rodolfo, merlo, merloali, rodolfomerloali, rodolfo merlo ali, rodolfo merlo, rodolfo ali, merlo ali, merlo ali, merlo, ali, web, web development, laravel, vuejs, php, javascript, nodejs, react, typescript, astro, css, sass, html, tailwindcss, bootstrap, git, github, gitlab, bitbucket, docker, kubernetes,api gateway">
-    <meta name="description" content="I'am a self-taught developer, with experience in the web and in web application development, as I am passionate about this area, also teaching (although not my strong point), providing support.">
-    <script src="/merlo.js" is:inline></script>
-	</head>
-	<body>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Rodolfo Merlo - Software Architect | Golang, Vue3, TypeScript</title>
+    <meta name="author" content="Rodolfo Merlo Ali" />
+    <meta
+      name="keywords"
+      content="software architect, golang developer, vue3, typescript, backend engineer, remote work"
+    />
+    <meta
+      name="description"
+      content="Software Architect specializing in scalable backend systems. Golang, Vue3, TypeScript. Open to remote opportunities worldwide."
+    />
+  </head>
+  <body>
     <main>
-      <merlo-ali>
-        <h1>I'am Rodolfo Merlo Ali</h1>
-        <p>Laravel, Vue.js developer, and a big fan of the web.</p>
-      </merlo-ali>
+      <header class="main-header">
+        <a href="/blog" class="btn">Blog</a>
+      </header>
+      <section class="hero">
+        <article>
+          <h1>I'm <strong>Rodolfo Merlo Ali</strong></h1>
+          <h2>
+            I focus on building scalable backend systems and integration
+            platforms
+          </h2>
+        </article>
+      </section>
+      <section class="contact">
+        <a
+          href="mailto:rodolfo@merloali.com"
+          aria-label="Email"
+          class="btn"
+        >
+          Contact Me
+        </a>
+        <aside class="hero-social">
+          <a
+            href="https://github.com/malisoft"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"><Github /></a
+          >
+          <a
+            href="https://gitlab.com/malisoftbo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitLab"><Gitlab /></a
+          >
+          <a
+            href="https://www.linkedin.com/in/rodolfo-merlo-ali"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"><Linkedin /></a
+          >
+          <a href="mailto:rodolfo@merloali.com" aria-label="Email"><Email /></a>
+        </aside>
+      </section>
+
       <article>
         <h2>About</h2>
         <p lang="en">
-          I'am a self-taught developer, with experience in the web and in web application development,
-          as I am passionate about this area, also teaching (although not my strong point), providing support.
-        <p/>
-        <p>
-          Currently I'm interested in <strong>entrepreneurship and research in technology</strong>.
+          Software Architect & Technical Lead with <strong
+            >3 years of professional experience</strong
+          > designing and building scalable backend systems. Specialized in <strong
+            >Golang, Vue 3, TypeScript, PostgreSQL, and Docker</strong
+          >, with a focus on microservices architecture, secure authentication
+          (OAuth 2.0), and event-driven systems.
+          <p></p>
+          <p>
+            Passionate about <strong
+              >system architecture, team leadership, and mentoring developers</strong
+            >. Currently seeking new opportunities in innovative tech companies
+            where I can contribute to building robust, scalable solutions.
+            Interested in <strong
+              >entrepreneurship and technology research</strong
+            >.
+          </p>
         </p>
       </article>
       <article>
         <h2>My Skills</h2>
         <section class="skills">
-          {skills.map((skill) => (
-            <Skill {...skill} />
-          ))}
+          {skills.map((skill) => <Skill {...skill} />)}
         </section>
         <h2>My Tools</h2>
         <section class="skills">
-          {tools.map((tool) => (
-            <Skill {...tool} />
-          ))}
-        </article>
+          {tools.map((tool) => <Skill {...tool} />)}
+        </section>
         <p class="dotfiles">
           <a href="https://gitlab.com/malisoftbo/dotfiles" target="_blank">
             Go to my dotfiles
@@ -62,48 +117,187 @@ import Thanks from '../components/card/Thanks.astro'
       <article>
         <h2>Portfolio</h2>
         <section class="portfolio">
-          {portfolio.map((portfolio) => (
-            <Portfolio {...portfolio} />
-          ))}
+          {portfolio.map((portfolio) => <Portfolio {...portfolio} />)}
         </section>
       </article>
       <article>
         <h2>Experience</h2>
         <section class="experience">
-          {experience.map((experience) => (
-            <Experience {...experience} />
-          ))}
+          {experience.map((experience) => <Experience {...experience} />)}
         </section>
       </article>
       <ContactMe />
       <footer>
-        <Thanks/>
+        <Thanks />
       </footer>
     </main>
-	</body>
-</html>
+  </body>
 
-<style scoped>
-.dotfiles {
-  text-align: center;
-  transition: scale 0.3s linear;
-  &:hover {
-    scale: 1.1;
-  }
-  > a {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    border-radius: 1rem;
-    padding: 10px;
-    margin: 10px;
-    outline: 1px solid var(--primary-color);
-    color: var(--primary-color);
-  }
-}
-footer {
-  width: 100%;
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--primary-color);
-}
-</style>
+  <style>
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge-open {
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+      }
+    }
+
+    .hero-location {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin: 10px 0;
+      padding: 8px;
+      background-color: rgba(61, 63, 67, 0.5);
+      border-radius: 8px;
+      display: inline-block;
+      width: 100%;
+    }
+    .hero {
+      display: flex;
+      margin: auto;
+      justify-content: center; /* Centered since no image */
+      align-items: center;
+      min-height: 200px;
+      gap: 2rem;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI,
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        Fira Sans,
+        Droid Sans,
+        Helvetica Neue,
+        sans-serif;
+    }
+
+    .hero article {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align left */
+      width: 100%;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    .hero-social {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-left: 1rem;
+    }
+
+    .hero-social a {
+      color: #fff;
+      transition:
+        transform 0.2s,
+        color 0.2s;
+    }
+
+    .hero-social a:hover {
+      transform: scale(1.1);
+      color: var(--primary-color);
+    }
+
+    .main-header {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 10;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--primary-color);
+      border-radius: 0.5rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+      text-color: var(--primary-color);
+    }
+
+
+    .btn:hover {
+      background-color: var(--primary-color);
+      color: var(--color-background);
+    }
+
+    .hero-social svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 0;
+      line-height: normal;
+    }
+
+    .hero h1 strong {
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--primary-color);
+      display: block;
+    }
+
+    .hero h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 10px 0;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    /* Existing styles */
+    .dotfiles {
+      text-align: center;
+      transition: scale 0.3s linear;
+      &:hover {
+        scale: 1.1;
+      }
+      > a {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        border-radius: 1rem;
+        padding: 10px;
+        margin: 10px;
+        outline: 1px solid var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--primary-color);
+    }
+  </style>
+</html>

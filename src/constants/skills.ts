@@ -45,6 +45,11 @@ export const skills = [
     image: '/images/postgres.png',
   },
   {
+    title: 'MongoDB',
+    description: 'NoSQL Database.',
+    image: '/images/mongo.png',
+  },
+  {
     title: 'CyberPanel',
     description: 'My favorite Control Panel for Web Servers.',
     image: '/images/cyberpanel.svg',

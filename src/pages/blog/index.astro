@@ -1,0 +1,107 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layout/layout.astro";
+import "../../styles/global.css";
+
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/assets/merlo.png" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Blog - Rodolfo Merlo</title>
+    </head>
+    <body>
+        <main>
+            <header class="blog-header">
+                <h1>Merlo's Blog</h1>
+                <a href="/" class="back-link">← Back Home</a>
+            </header>
+            <section class="blog-list">
+                {
+                    posts.map((post) => (
+                        <article class="blog-preview">
+                            <a href={`/blog/${post.slug}/`}>
+                                <h2 class="title">{post.data.title}</h2>
+                                <p class="date">
+                                    {post.data.pubDate.toLocaleDateString(
+                                        "en-us",
+                                        {
+                                            year: "numeric",
+                                            month: "short",
+                                            day: "numeric",
+                                        },
+                                    )}
+                                </p>
+                                <p class="description">
+                                    {post.data.description}
+                                </p>
+                            </a>
+                        </article>
+                    ))
+                }
+            </section>
+        </main>
+    </body>
+</html>
+
+<style>
+    .blog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        padding: 1rem;
+    }
+    .blog-header h1 {
+        margin: 0;
+        color: var(--primary-color);
+    }
+    .back-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .back-link:hover {
+        text-decoration: underline;
+    }
+    .blog-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .blog-preview a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        transition:
+            transform 0.2s,
+            border-color 0.2s;
+    }
+    .blog-preview a:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-color);
+    }
+    .title {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+    .date {
+        margin: 0 0 1rem 0;
+        font-size: 0.9rem;
+        color: #888;
+    }
+    .description {
+        margin: 0;
+        line-height: 1.6;
+    }
+</style>
